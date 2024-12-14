@@ -101,8 +101,6 @@ Never hang-up the phone before the system comes back up or else the system will 
 
 If the system crashes again, call DDC again and repeat Stage Zero.
 
-'''
-
 == Stage One
 
     Field Service Arrives
@@ -193,3 +191,38 @@ Once the problem appears to go away, you fall back to Stage Zero, but the failur
 If, when you arrived at Stage One, the FSE ran diagnostics and they ran successfully and do not complain about anything, the FSE usually pulls and re-seats all the cards in the system.  Some FSE's then haul out the pencil eraser and clean the connectors when practical, which seems to always be extremely fatal to the cards that get erased.  This type of activity seems to always help advance you to Stage Two.
 
 The problem for you at this point in Stage One is figuring out what is going on.  The FSE's usually won't tell you what they are up to, so you have to watch for tell-tale signs.
+
+You are quickly advancing toward Stage Two if:
+
+1. The system diagnostics display a warning like:
++
+----
+	WARNING:  ONLY DIAGNOSTIC TESTS 1 THROUGH 64 CAN BE RUN
+		  WITH MAIN MEMORY DISCONNECTED!
+----
++
+This is always a dead giveaway, particularly if you only called the FSE in to fix a tape drive.
+
+2. The diagnostics display messages on the console like:
++
+----
+	TEST #1, KL LOOP TEST
+	#KL LOOP FAILURz
+	@@@@@@@@@@@@@@@@@@@...
+----
++
+and the '@' characters continue to print for several pages of paper until someone stops it.
+
+3. There are absolutely no signs of life in the system at all, and even after some parts are swapped, or possibly *because* of the part swapping, none of the diagnostics will even start.
+
+4. The FSE's ask if you have any extra copies of the front-end diagnostic or configuration diskettes.  Do not anger the FSE by asking "Why?  What's wrong with the site copy?"
+
+5. The FSE asks if you happen to remember the password on the field-service pack, or if you happened to have duplicated that pack recently.
++
+****
+The field-service disk pack is a removable hard disk (or a compact disc) that usually belongs to the computer maker and is kept at sites that have enough problems or a higher level of service agreement.  It usually contains all diagnostics for the machine in question, a burn-in or endurance test directory, and copies of LISP-HAUNT, MDL-ZORK, 10TREK, ADVENTURE, PERL, DOOM and EMACS (all for system stressing/loading purposes, of course.)  This pack or disc is the proprietary property of the field service organization and the site management are usually forbidden from even gazing at this object any longer than necessary.
+****
+
+6. The FSE's ask you where the on-site microfiche is that they left at your site the last time there was significant trouble.  The only worse sign is when they actually go though the fiche and merge in the Update and Correction 'fiche and discard the old sheets.  This activity is usually given priority close to that of sorting your sock drawer.  You may safely assume that you have serious problems if you see this activity.  For more modern support organizations, they may ask if there is a web browser on a machine that is working that they can use, but the FSE may also have to make some calls first to find out what the support URLs are this week.
+
+7. The FSE's ask if you have a 'scope, or worse, a soldering iron.  FSE's normally only do board swapping, and only a few of them can use a soldering iron without inflicting serious injury on themselves or your computer.
