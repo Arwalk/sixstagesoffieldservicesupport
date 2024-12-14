@@ -1,0 +1,82 @@
+= The Six Stages of Field Service Support (TM) by Frank Durda IV
+:author: Frank Durda IV
+:icons: font
+
+If you have always wondered about the various stages of support action your computer maker provides when your system self-destructs, here is a handy guide that will tell you everything you ever wanted to know about the Six Stages of Field Service Support and how to identify the symptoms of being at each stage.
+
+Much of this knowledge is based on twenty-five years of careful observations at sites with DECsystem-20s, DEC Alphas, IBM 370/155, VAX 11/780, IBM 4341, and other systems with many different service organizations. Some machines needed more help than others. For example, the DEC-20 once managed to get over 300 hours of down-time in a single month, so it needed lots of support. And that wasn't one of the months when the computer room filled with sewage.
+
+[WARNING]
+.DISCLAIMER #1
+====
+I have dealt with other computer companies and the following stages apply to just about every vendor out there, so don't think that I am just picking on Digital Equipment Corporation (DEC), now a proud division of the Compaq Computer Assimilation Corporation, er wait, make that the Hewlett Packard Assimilation Corporation. These rules of the service and support universe also apply to almost every mechanical or electronic thing, including that toner-belching photo-copier you love to hate.
+====
+
+[WARNING]
+.DISCLAIMER #2
+====
+For those of you that think I didn't like the DEC-20, don't get me wrong. It was one of the best computer architectures I have ever dealt with, and TWENEX and TOPS-20 were two of the best operating systems around at the time, certainly better than OS/MVT, VM, HASP, MS-DOS and the other junk that the competition were pushing. And the TOPS-20 clock won't go boom in a few years like most other systems I know. DEC learned their lesson in 1978 when all the PDP-11s fell over.
+
+Regardless of who made your computer or how large or small it is, these events may seem hauntingly familiar.
+====
+
+[WARNING]
+.THE "YOU HAVE BEEN WARNED" DISCLAIMER
+====
+In case you needed to be told, there are barrels of :-) here.
+====
+
+[quote, Ancient greeting, date unknown.]
+"May the road rise to meet you, and may you never go beyond Stage Two."
+
+== Stage Zero
+
+  The Return of the BUGHLT: SWPUPT
+  or How I hate the message "%DECSYSTEM-20 NOT RUNNING"
+
+Stage Zero is where your journey begins when all is well and then suddenly all the terminals around the university or office go dead and the French-fryer" beepers on the DECwriter terminals all simultaneously go off. This is the way that the TOPS-20 operating system told everybody that it had crashed and that it had also lost what everybody was doing. Alerted by the beeping sounds or the cries of anguish from the users (or both), the keepers of the system rush to the machine room. On arriving in the machine room, you may smell the problem or just see the flames coming out of the processor.
+
+:footnote_0_1: A no-win situation. You will be blamed for not taking any action as the down-time will cost the business money because the systems were down, and you will be blamed for spending unauthorized money if you do take action. The best solution is to take the back door and get out now.
+
+This type of event invariably happens four minutes after the daily service contract period ends, which means it will cost big bucks to get the Field Service Engineers (FSEs) to come out to fix the problem right now. Your management has also disappeared for the day, leaving you with no authority to spend money to get help. footnote:[{footnote_0_1}]
+
+Meanwhile, the users are already starting to press their noses and cheeks against the computer room windows, as if they think that their concerned stares will somehow make things better. Believe me, it does not. To avoid gazing in that direction, everybody in the computer room will avoid looking towards the windows, even to the extreme of walking backwards and feeling behind themselves for the manuals in the bookcase that was placed too close to the visitor viewing windows. More often than not, this results in more accidents, such as knocking over the one gallon jar of jalapeno peppers that formed the complete daily evening meal for the console operator. Seriously.
+
+Left with all the options that don't involve spending new money, you go and call DDC, the Digital Diagnostic Center (saying this is always accompanied by a jarring chord of music, such as that heard in the film "Monty Python and the Holy Grail" when they say "A SHRUBBERY!").
+
+For those of you who don't deal with DEC, DDC is this neat service that you call when your computer system starts doing strange things. DDC can run diagnostics on your computer from where they live (used to be Colorado Springs, but its latest incarnation seems to be in a facility in Atlanta which seems to be named after a space alien who used to appear in badly-written sitcoms - ALF) or study core dumps your machine may have emitted, and these tests help isolate the problem before the local service office even knows that there is a problem. Well, that was the idea anyway.
+
+If the support structure for your computer doesn't have something equivalent to DDC, proceed to Stage One.
+
+:footnote_0_2: Don't try to force details of the crash on the first person you reach. They are usually trained only to get a few contact details and if you try to give them information on the actual problem, they are just as likely to overwrite your phone number with the problem description, delaying the return call further.
+
+Assuming you do have a DDC-a-like, you give them a call, and they will take your name, phone number and serial number. (The serial number of the computer, not yours.) They may even ask what the trouble is.footnote:[{footnote_0_2}] Now they will tell you that they will call you back as soon as they have a service representative available. Actually, this delay is deliberate and gives DDC time to check their records to make sure that the serial number you gave them really resides at the phone number you gave them when you called. They learned this precaution from the pizza delivery industry, either that or else DEC had a lot of problems with the wild guys over at the Delta-I-Q fraternity house at MIT calling in prank trouble tickets on the campus computers (or perhaps on computers belonging to other schools). I hear that "wild" stuff like that still happens all the time up there.
+
+Just substitute the name of your remote support service company where it says "DDC".
+
+:footnote_0_3: Actually the remote support people do not always use a trans-Atlantic phone line.  With the discount phone services now available, your phone call can also be routed over those phone lines you see in the country laying in the ditch and bushes along the railroad tracks.  All of these phone lines have the requisite Signal-to-Noise Ratio of about 0.2dB.  This low quality phone line actually has a valid purpose.  Since it is so difficult to communicate with the support representative, you are less likely to start any lengthy conversations about how much smoke is coming out of the malfunctioning system, how many students are standing behind you with final exams next week, or how much money your firm will lose if the machine isn't fixed.  Subsequently, this allows the rep to spend more time looking at the diagnostic results and frees up reps so that they can help other sites quicker.
+
+Anyway, sometime later, someone from DDC will call you over some trans-Atlantic phone line.footnote:[{footnote_0_3}] Going to a quiet room to talk to the service representative won't help as they always have you go back into the machine room and load the field-service pack and set switches on the front-end processor and "boot from SW" or perhaps they have you just stand in front of the computer and see if the floppy drive light comes on.  For machines with more than one switch, the DDC reps always seem to insult your intelligence by giving the switch settings like: "Set the two right-most switches down and then skip two switches and push the next one down."  People who have called DDC more than once learn to ignore these instructions since DDC always asks for the same switch settings and so you just set the proper octal value on the front-end processor control panel and say "uh huh" a lot to the rep.
+
+DDC can now take over your system via the front-end processor and run diagnostics which test the various parts of the machine as well as testing the amount of paper you have left in the console DECwriter terminal.
+
+You must not leave the area while these tests are being run, because the DDC person will probably contact you next, not by calling you on the phone, but by typing messages to you on the console.  If you aren't sitting right there so you can respond, the DDC rep may go away and you get to start the problem reporting process all over.  You need to hang around anyway because someone needs to be standing by to un-jam the console printer.
+
+:footnote_0_4: "All the parts necessary" really means, "all the spares kits that should contain the right parts necessary".  These black cases can truly be a Pandora's box, because sometimes the boards within have come out of another machine across town and may possess their own special problems that can now be added to yours. \
+An added complexity is that these days for certain systems, they seem to bring one and only one card out at a time, meaning you have to wait if any associated cable, screw or other part is discovered to be the real culprit.
+
+If the tests eventually find something wrong, DDC will contact the local field service office who will come out to your location with "all the parts necessary"footnote:[{footnote_0_4}] to work on the diagnosed problem whenever the on-site service period resumes.  By having a FSE arrive at your site, you proceed to Stage One.
+
+If DDC is unable to run any diagnostics because the front-end processor is dead or the smoke that is pouring out of the system is too thick for you to see if the floppy drive light is coming on, proceed to Stage One.
+
+If DDC doesn't find anything wrong, count the number of times that the system has crashed in the last week from unexplained causes or problems that cannot be diagnosed that you have reported to DDC.  If the number of crashes is greater than a secret quantity which you do not know and will not be told, proceed to Stage One.[5]   If you haven't reached the magic number, reboot the system and remain in Stage Zero, although after each crash, DDC might give you a slight change to make to the system configuration that will help cloud the issue later when the troops do arrive.
+
+[IMPORTANT]
+.Important Murphy Law:
+====
+Never hang-up the phone before the system comes back up or else the system will immediately fail again and you will have re-train another service rep on your ability to work with octal numbers.
+====
+
+If the system crashes again, call DDC again and repeat Stage Zero.
+
+'''
