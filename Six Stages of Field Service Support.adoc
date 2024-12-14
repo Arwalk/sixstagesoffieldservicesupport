@@ -69,7 +69,10 @@ If the tests eventually find something wrong, DDC will contact the local field s
 
 If DDC is unable to run any diagnostics because the front-end processor is dead or the smoke that is pouring out of the system is too thick for you to see if the floppy drive light is coming on, proceed to Stage One.
 
-If DDC doesn't find anything wrong, count the number of times that the system has crashed in the last week from unexplained causes or problems that cannot be diagnosed that you have reported to DDC.  If the number of crashes is greater than a secret quantity which you do not know and will not be told, proceed to Stage One.[5]   If you haven't reached the magic number, reboot the system and remain in Stage Zero, although after each crash, DDC might give you a slight change to make to the system configuration that will help cloud the issue later when the troops do arrive.
+:footnote_0_5: Although not revealed, you will be told by phone if you have reached the requisite number of crashes or not.  Phrases like "this is a real strange one" mean you are getting close but not quite there.  On the other hand, "I'll pass this call on to the local office" means that you are closer to zero than you are to the magic number.  "I'll get right back to you" means that the local office is going to call you next, not the person at DDC. I never understood that one. \
+If the FSE was on site when the problem initially occurred, or if you have fallen back to Stage Zero from a higher level, the phrase "I'm going to get some other kits out of the car" or "we [Royal We] are going out for some lunch" indicates that you have not had sufficient reproducible failures to warrant a gutting of the system.  The hope is that the machine will either repair itself before they get back, or it will completely melt-down, allowing them to skip to Support Stage Two, where your service call escalates and the problem becomes Someone Else's Problem (SEP).
+
+If DDC doesn't find anything wrong, count the number of times that the system has crashed in the last week from unexplained causes or problems that cannot be diagnosed that you have reported to DDC.  If the number of crashes is greater than a secret quantity which you do not know and will not be told, proceed to Stage One.footnote:[{footnote_0_5}] If you haven't reached the magic number, reboot the system and remain in Stage Zero, although after each crash, DDC might give you a slight change to make to the system configuration that will help cloud the issue later when the troops do arrive.
 
 [IMPORTANT]
 .Important Murphy Law:
@@ -80,3 +83,74 @@ Never hang-up the phone before the system comes back up or else the system will 
 If the system crashes again, call DDC again and repeat Stage Zero.
 
 '''
+
+== Stage One
+
+    Field Service Arrives
+    or "Why you should invest in some ACME handcuffs and chains"
+
+You arrive at Stage One in one of five ways:
+
+:footnote_1_6: This is an important and little-understood part of FS organizations.  A considerable percentage of open tickets are resolved simply by wearing out the customer, who simply gives up, or is forced to turn attention to other issues at some point, allowing the FS organization to close the ticket with some log entry like "Issue resolved, no further complaints, feedback or signs of breathing from customer."  To speed this date, expect a regular pattern of requests for more information, such as the massive SYSCHECK that DEC has you run every few days on the off-chance that your system configuration has changed, apart from you having to add disk storage to hold all the SYSCHECK output logs.  Any lack of promptness in returning this material may be considered to be a sign that the issue no longer exists and that you are happy, when in fact you are actually occupied down in the local bankruptcy court.
+
+:footnote_1_7: Although Preventative Maintenance used to mainly involve cleaning the air filters, and perhaps running some memory diagnostics, sometimes they also used to apply mandatory field changes to your hardware.  That sounds great until you find that the hardware change now renders the OS you have incapable of booting, until you upgrade the OS as well.  Scheduling backups just before PM isn't such a bad idea.
+
+1. DDC was called and the diagnostics found something wrong with your system.
+
+2. DDC was called many times and the diagnostics have not found any cause for the crashes.  You must reach the magic (and secret) number of crashes and phone calls to support to use this reason.  Accompanied by this reason is a mandatory replacement of a piece of hardware.  When pressed, the vendor may actually admit that none of the diagnostics actually identified this as being the failing part, but they felt they had to bring at least one part to your site.
+
+
+3. DDC has recommended some combination of the application of OS upgrades, patch kits, backing-out patch kits, reformatting and reinstalling the OS without the patch kits, putting anti-nuclear-blast sticky-tape on the windows, downgrades to earlier OSes, small animal sacrifices, and none of these things have made you go away.  You, not the problem.footnote:[{footnote_1_6}] Having exhausted the standard list of software-related causes, the ball gets lobbed-into the hardware group even if the problem started the instant you applied a new OS upgrade.  Now, field service is sent to make sense of what so far has been done remotely, or if the failure seems to make sense, change some hardware around in your system so that the failure really won't make any sense.
+
+4. You don't have anything equivalent to DDC for your system.
+
+5. Field Service was performing the monthly Preventive Maintenance (PM) and the system wouldn't boot any more when they got finished.  (This is the equivalent of your car not starting any more after having the guy at the gas station "check under the hood".)footnote:[{footnote_1_7}]
++
+You are not in Stage One if the FSE was performing PM on your system and when you returned from lunch, you found your entire VAX 11/780 tilting at a 45-degree angle, with the FSE desperately trying to get the system back upright or at least trying to keep it from tilting any further.  This actually happened once in my presence - something about not extending those stabilizer legs before opening all of the cabinets.  Now, if the system does tip completely over, then you get to go to Stage One, right after the FSE goes to the hospital.
+
+If the Field Service Engineer wasn't already on the scene in Stage Zero, most FSEs must go through a period of disbelief about the severity or existence of the problem that you are reporting before serious work on the problem begins.  This hesitant behavior is usually characterized by the FSE walking into the machine room, observing the flames coming out of the system cabinets and saying: "AH, HA! This looks like a software problem."
+
+Even if the FSE was on-site and the machine worked perfectly before they started doing routine maintenance on it, the FSE still may accuse you of running an operating system that has been "patched" or "customized".  Anything beyond setting the local time-zone may be considered to be "customized", even if you replaced broken application executables with ones from earlier vendor-provided versions that do work.  You are generally doomed if you are running NIDEC ("Not Invented by DEC") software.  In the 1980s, you would expect questions such as, "Are you trying to run UNIX or something?"  In the late 1990s, it is "Are you trying to run FreeBSD/NetBSD or something?"
+
+If you are talking about problems with a photocopier, the question would be something like "You aren't trying to make double-sided copies, are you?"
+
+:footnote_1_8: An interesting piece of trivia should be mentioned at this point: You have no doubt seen these data processing facilities with extra-heavy security measures like guard stations that make you sign in and out, card entry, double-door man-traps, cameras everywhere, etc.  You no doubt have always assumed that all of this stuff was to keep terrorists, Rush Limbaugh, Barney the Purple object and other unauthorized things from getting into your computer room, and this reason is often given to company auditors and accountants to justify the outrageous cost for all of the cameras, guards and guns. \
+Experienced Data Processing and Information Systems facility personnel know that the real reason for all of this security is to keep the FSE's from managing to leave the site before the systems can be completely restarted, at which point you might notice that only 512K of your multi-Megabytes of main memory are still visible, and only one CPU is still responding. \
++
+The longer it takes to bring the computer systems up to the point where work can be done on them, the more security measures the facility that houses the computers will have.  Think about it.\
+
+Although the FSE is now at your site, he/she may leave at any moment, causing you to return to Stage Zero.footnote:[{footnote_1_8}] You will advance firmly into Stage One if any of the following occur:
+
+1. Something obviously wrong was detected using the diagnostics.  (Being unable to even start the diagnostics will always get you to stick in Stage One.)
+
+2. The system has crashed a number of times greater than the secret quantity that forces a Stage One.  Because this number is so secret, the FSEs aren't always up to date with what the secret value is today and so the FSE may not think things are as bad as DDC decided they are.
+
+3. The Fire Department has just allowed you to re-enter the building after extinguishing the "software problem" by hosing down the memory cabinet (M-Box), even though the fire was in the processor cabinet (E-Box).
+
+:footnote_1_9: For you non-DECies, the KL is last of the "big" 36 bit ECL processors in the PDP-10 line to make it out of the lab.  (There was one called "Jupiter" but it had an accident.  The KS-10 did come out a bit later, but it was a lower-performance unit.)
+
+Stage One typically directs the FSE to change any boards that the diagnostics indicate are causing the problem.  If the diagnostics won't even run, this step is either skipped or the FSE swaps whatever boards he happens to have in the processor (aka "KL") spare case. footnote:[{footnote_1_9}]
+
+
+
+:footnote_1_10: For you non-DECies, CHECKD is this file-system checker that takes a huge amount of time, even if nothing is wrong.  CHECKD used to check about 8 megabytes of disk data a minute, so a dual-RP06 public structure (which contains about 400meg total) took about 45 minutes to check, if it didn't have a lot of data stored on it.  So it could easily take 50 minutes or more before people could use the computer to find out if the system was working normally again.  TOPS-20 would ask if you wanted to run CHECKD with a message like \
+include::includes/source_checkd.adoc \
+So everybody always ran CHECKD.
+
+If the diagnostics then run without incident and the operating system will get as far as asking if it is okay to run CHECKD (an incredibly slow fsck footnote:[{footnote_1_10}]) the FSE may consider the problem solved and may leave.  Depending on the number of times they have been called to look at the same problem in recent days, the FSE may hang around until the system gets as far as asking for the current date or starts the network interfaces before leaving.  The goal here is apparently to be out of the area prior to the "login" prompt appearing, or more likely, not appearing.
+
+If the diagnostics now find a problem, the indicated board is replaced with one from "the spares kit".  Hopefully the FSE brought the right spares kit with him.  If not, you will experience a delay in getting a replacement component, which he may have to get, or it will be delivered by the tag-team FSE.  (Some creative FSEs will, in this case, replace some other unrelated cards that they do have, just in case the diagnostic is mistaken.  This kills time - and possibly your machine - nicely.)
+
+After inserting the replacement part, make sure that the FSE re-runs the diagnostics before he leaves to make sure that:
+
+A. The replacement card cured the problem or made the problem move elsewhere (symptom changes).
+
+B. The replacement card isn't worse than the one that was in the machine in the first place.
+
+A spooky thing that happens here is that most FS organizations seem to have a policy that a board will be tagged as "bad" only if it has a solid failure which "follows" the board.  If a board can be moved to a different machine or different slot in the machine and the problem goes away, or the problem is intermittent, the board will be replaced, but may not be tagged as being defective.  This board now ends up in the spares kit.  Remember this board; it may come back, or worse, you might get someone else's headache-board.
+
+Once the problem appears to go away, you fall back to Stage Zero, but the failure counter is incremented.
+
+If, when you arrived at Stage One, the FSE ran diagnostics and they ran successfully and do not complain about anything, the FSE usually pulls and re-seats all the cards in the system.  Some FSE's then haul out the pencil eraser and clean the connectors when practical, which seems to always be extremely fatal to the cards that get erased.  This type of activity seems to always help advance you to Stage Two.
+
+The problem for you at this point in Stage One is figuring out what is going on.  The FSE's usually won't tell you what they are up to, so you have to watch for tell-tale signs.

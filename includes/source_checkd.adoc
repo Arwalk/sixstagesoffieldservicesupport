@@ -1,0 +1,8 @@
+
+[source]
+----
+    Run CHECKD? No
+    %XYZZY Warning - Replying 'No' is equivalent to slitting
+	   your wrists with a tape leader trimming tool.
+    Run CHECKD? Yes
+----
